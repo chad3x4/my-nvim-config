@@ -42,7 +42,7 @@ return {
     },
     { -- Smart renaming with immediate visual feedback
         "smjonas/inc-rename.nvim",
-        event = "InsertEnter",
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
             require("inc_rename").setup({
                 input_buffer_type = "dressing",
