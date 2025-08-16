@@ -14,27 +14,25 @@ return {
         local builtin = require("statuscol.builtin")
         return {
             relculright = true,
-            -- setopt = true,
+            setopt = true,
             -- override the default list of segments with:
-            -- number-less fold indicator, then signs, then line number & separator
+            -- number-less fold indicator, line number and git + diagnostic sign
             segments = {
-                { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
                 {
-                    sign = { name = { "diagnostic/signs" }, maxwidth = 2, auto = true },
+                    text = { builtin.foldfunc },
+                    click = "v:lua.ScFa",
+                },
+                {
+                    text = { builtin.lnumfunc },
+                    click = "v:lua.ScLa",
+                },
+                {
+                    text = { " " },
+                },
+                {
+                    text = { "%s" },
                     click = "v:lua.ScSa",
                 },
-                { text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
-                { text = { " " } },
-                {
-                    sign = { name = { ".*" }, maxwidth = 2, colwidth = 1, auto = true, wrap = true },
-                    click = "v:lua.ScSa",
-                },
-                { text = { "%s" }, click = "v:lua.ScSa" },
-                -- {
-                --     text = { builtin.lnumfunc, " " },
-                --     condition = { true, builtin.not_empty },
-                --     click = "v:lua.ScLa",
-                -- },
             },
         }
     end,
