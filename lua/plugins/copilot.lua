@@ -7,7 +7,23 @@ return {
         },
         build = "make tiktoken",
         opts = {
-            -- See Configuration section for options
+            window = {
+                layout = "float",
+                title = "  Copilot in  Neovim",
+                width = 0.8,
+                height = 0.8,
+                border = "rounded",
+                zindex = 100,
+                blend = 5,
+            },
+
+            headers = {
+                user = " You: ",
+                assistant = " Copilot: ",
+                tool = "󰖷 Tool: ",
+            },
+            separator = "━━",
+            show_folds = false, -- Disable folding for cleaner look
         },
         keys = {
             { "<leader>cc", "<cmd>CopilotChatToggle<cr>",   mode = "n", desc = "Toggle Copilot Chat" },
