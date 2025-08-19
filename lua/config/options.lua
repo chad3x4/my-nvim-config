@@ -17,7 +17,7 @@ set.smartcase = true
 -- appearance
 set.termguicolors = true
 set.background = "dark"
-set.signcolumn = "yes"
+set.signcolumn = "yes:2"
 
 set.cursorline = true
 
