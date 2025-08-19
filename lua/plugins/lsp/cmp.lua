@@ -57,7 +57,7 @@ return {
                 end),
 
                 -- tab complete
-                ["<Tab>"] = cmp.mapping(function(fallback)
+                ["<C-j>"] = cmp.mapping(function(fallback)
                     local col = vim.fn.col(".") - 1
 
                     if cmp.visible() then
@@ -70,7 +70,7 @@ return {
                 end, { "i", "s" }),
 
                 -- go to previous item
-                ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
+                ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
 
                 -- navigate to next snippet placeholder
                 ["<C-d>"] = cmp.mapping(function(fallback)
