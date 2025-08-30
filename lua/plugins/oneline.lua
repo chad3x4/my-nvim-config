@@ -54,14 +54,6 @@ return {
         "lewis6991/whatthejump.nvim",
         event = { "BufReadPre", "BufNewFile" },
     },
-    { -- Floating statuslines
-        "b0o/incline.nvim",
-        config = function()
-            require("incline").setup()
-        end,
-        -- Optional: Lazy load Incline
-        event = "VeryLazy",
-    },
     { -- For navigating between pane for both vim and tmux
         "christoomey/vim-tmux-navigator",
     },
